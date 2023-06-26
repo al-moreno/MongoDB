@@ -3,6 +3,8 @@
 
 ## Table of Contents
 1. Setup Environment
+    a. Installing MongoDB for MAC
+    b. Installing MongoDB for Windows
 
 
 
