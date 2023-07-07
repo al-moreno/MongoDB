@@ -1,16 +1,39 @@
-# NoSQL Database with MongoDB - Setup Environment
+# NoSQL Database with MongoDB - Unit 1
 
 
 ## Table of Contents
-1. Setup Environment
+1. Introduction
+2. Installing & Setup
 
+
+
+## Introduction
+
+View the video for Unit 1.
 
 
 ## Setup Environment
 
-### Installing MongoDB for MAC
+Before we start to work with MongoDB, we first need a MongoDB database to work with. And there are a couple of options for setting up a database, we can use a hosted service like MongoDB Atlas and connect to that or we can install it locally onto our computer which is what we will be doing for this course to start
 
-We will begin by installing MongoDB onto our local system.
+<!-- but later in the course, I will also show you how to set up a hosted database using MongoDB Atlas. -->
+
+
+### Installing MongoDB
+
+Let's begin by heading over to the [MongoDB website](https://www.mongodb.com/try/download/community) where we will select downloading the Free Community Server. Scrolling to about mid-page, where we can select the version, the platform, and the package type desired. Once we have done that we will select download.
+
+
+#### FOR MAC
+
+***Recommended***
+Follow the instructions:
+[MongoDB Install on macOS](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) 
+[MongoDB Compass](https://www.mongodb.com/docs/compass/master/install/)
+[MongoDB Shell](https://www.mongodb.com/docs/mongodb-shell/install/)
+
+
+or
 
 
 Steps:
@@ -50,7 +73,7 @@ Steps:
 12. We will now be creating a folder on our local device which will serve as the local data storage location for MongoDB. We will do so by typing the following command in our terminal: "sudo mkdir -p /data/db" and entering. You may be asked for your Mac password again, enter the password for your device if this is the case.
 
 
-13. Next, we are required to set permissions for the data directory for the current user. Let's begin by verifying our username in the terminal, type "whoami" and press enter. The response is your username. Proceed by entering "sudo chown yourusername /data/db". When you hit enter it will once again request your password.
+13. Next, we are required to set permissions for the data directory for the current user. Let's begin by verifying our username in the terminal, type "whoami" and pressing enter. The response is your username. Proceed by entering "sudo chown yourusername /data/db". When you hit enter it will once again request your password.
 
 
 14. Force quit your terminal and open a fresh terminal instance where you will enter Mongo --version. Your response should indicate the version of the download. If this is the case, you have been successful with your setup.
@@ -59,7 +82,17 @@ Steps:
 Note: If you ran into issues and were not able to successfully install. Google any errors you may come across or reach out to the organization for assistance.
 
 
-### Installing MongoDB for Windows
+#### FOR Windows
+
+***Recommended***
+Follow the instructions:
+[MongoDB Install on Windows](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/) 
+[MongoDB Compass](https://www.mongodb.com/docs/compass/master/install/)
+[MongoDB Shell](https://www.mongodb.com/docs/mongodb-shell/install/)
+
+
+or 
+
 
 We will begin by installing MongoDB onto our local system.
 
@@ -103,7 +136,7 @@ Steps:
 
 13. While in the .bash_prifile, enter the lowercase i on your keyboard which should result in enabling the insert mode. You can confirm you are on the insert mode if you see "--INSERT--" on your terminal screen. Enter the following command:
 "alias mongod="/c/Program\ files/MongoDB/Server/versionnumber/bin/mongod.exe" followed by
-"alias mongo="/c/Program\ files/MongoDB/Server/versionnumber/bin/mongo.exe" where the versionnumber is the number of the version you downloaded up to the first digit after the decimal.
+"alias mongo="/c/Program\ files/MongoDB/Server/versionnumber/bin/mongo.exe" where the version number is the number of the version you downloaded up to the first digit after the decimal.
 
 
 Here's an example of what mine would look like:
@@ -120,10 +153,11 @@ Here's an example of what mine would look like:
 Note: If you ran into issues and were not able to successfully install. Google any errors you may come across or reach out to the organization for assistance.
 
 
+## Resources
 
 
-
-
+[MongoDB Install on macOS](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/)
+[MongoDB Install on Windows](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/)
 
 
 

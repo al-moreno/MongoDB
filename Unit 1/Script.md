@@ -1,19 +1,91 @@
-# NoSQL Database with MongoDB - Setup Environment
+# Module 1: Introduction to MongoDB
 
 
 ## Table of Contents
-1. Setup Environment
-    a. Installing MongoDB for MAC
-    b. Installing MongoDB for Windows
+1. What is MongoDB
+2. Advantages and use cases of MongoDB
+3. Installation and setup
+
+
+
+## Introduction
+
+
+- Slide 1 -
+Thank you for choosing Craft Knowledge's comprehensive MongoDB course. I'm Ana, your instructor for this course, and I'll guide you through all the essential concepts and operations of MongoDB.
+
+
+As we start our journey, you will find that MongoDB is very versatile allowing it to be used in just about any project you may be working on including websites, mobile apps, and desktop apps. It's versatile because it is a fast and efficient way to store data without stressing over database configurations, setup, or structure.
+
+
+
+
+- Slide 2 -
+Throughout this MongoDB course, we will cover a range of important objectives. We will begin by exploring the fundamental question of "What is MongoDB?" This will provide us with a solid understanding of its purpose, features, and how it differs from other database management systems. We will then delve into the advantages and use cases of MongoDB, discovering the unique benefits it offers and the various scenarios in which it excels. Additionally, we will guide you through the installation and setup process, ensuring that you have a solid foundation to work with MongoDB effectively. By accomplishing these objectives, you will gain a comprehensive understanding of MongoDB, its strengths, and how to set it up for successful implementation in your projects.
+
+
+- Slide 3 -
+
+
+MongoDB is a widely adopted NoSQL document-oriented database management system. It offers a highly flexible and scalable solution for storing and accessing data. In contrast to traditional SQL databases, MongoDB adopts a distinct approach by utilizing flexible JSON-like documents instead of tables and rows. This allows for the seamless management of diverse and evolving data structures, enabling developers to efficiently work with data in a more intuitive and adaptable manner.
+
+
+
+
+- Slide 4 -
+
+
+MongoDB, a NoSQL database, offers several advantages over traditional SQL databases. Here are some of the key benefits of MongoDB:
+
+
+1. Flexible document-based data model: MongoDB allows you to store data in flexible, schema-less JSON-like documents. This provides the ability to handle evolving data structures and easily accommodate changes in your application's requirements.
+
+
+2. Scalability and high performance: MongoDB is designed to scale horizontally, allowing you to distribute data across multiple servers or clusters. This enables seamless scaling as your application grows, ensuring high performance and the ability to handle large amounts of data.
+
+
+3. Rich indexing and querying capabilities: MongoDB supports indexing on any attribute within a document, enabling efficient querying and retrieval of data. It provides a powerful query language with a wide range of operators and functions, making it easy to work with data.
+
+
+4. Replication and high availability: MongoDB provides built-in replication, allowing you to create replicas of your data across multiple servers. This ensures data redundancy, fault tolerance, and automatic failover, resulting in high availability of your database.
+
+
+These features and advantages make MongoDB a powerful and flexible database solution for a wide range of applications including content management systems (CMD),s real-time analytic, and user data management
+
+
+
+
+- Slide 5 -
+
+
+MongoDB provides installation options for multiple operating systems, ensuring compatibility with Windows, macOS, and Linux. To begin the installation, users can access installation packages directly from the official MongoDB website. The setup process involves configuring the MongoDB server, specifying data directories for storage, and initiating the database service. By following these steps, users can successfully set up and start MongoDB, allowing them to harness the power of this versatile database management system on their preferred operating system.
+
+
 
 
 
 ## Setup Environment
 
+Before we start to work with MongoDB, we first need a MongoDB database to work with. And there are a couple of options for setting up a database, we can use a hosted service like MongoDB Atlas and connect to that or we can install it locally onto our computer which is what we will be doing for this course to start
 
-### Installing MongoDB for MAC
+<!-- but later in the course, I will also show you how to set up a hosted database using MongoDB Atlas. -->
 
-We will begin by installing MongoDB onto our local system.
+
+### Installing MongoDB
+
+Let's begin by heading over to the [MongoDB website](https://www.mongodb.com/try/download/community) where we will select downloading the Free Community Server. Scrolling to about mid-page, where we can select the version, the platform, and the package type desired. Once we have done that we will select download.
+
+
+#### FOR MAC
+
+***Recommended***
+Follow the instructions:
+[MongoDB Install on macOS](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) 
+[MongoDB Compass](https://www.mongodb.com/docs/compass/master/install/)
+[MongoDB Shell](https://www.mongodb.com/docs/mongodb-shell/install/)
+
+
+or
 
 
 Steps:
@@ -53,7 +125,7 @@ Steps:
 12. We will now be creating a folder on our local device which will serve as the local data storage location for MongoDB. We will do so by typing the following command in our terminal: "sudo mkdir -p /data/db" and entering. You may be asked for your Mac password again, enter the password for your device if this is the case.
 
 
-13. Next, we are required to set permissions for the data directory for the current user. Let's begin by verifying our username in the terminal, type "whoami" and press enter. The response is your username. Proceed by entering "sudo chown yourusername /data/db". When you hit enter it will once again request your password.
+13. Next, we are required to set permissions for the data directory for the current user. Let's begin by verifying our username in the terminal, type "whoami" and pressing enter. The response is your username. Proceed by entering "sudo chown yourusername /data/db". When you hit enter it will once again request your password.
 
 
 14. Force quit your terminal and open a fresh terminal instance where you will enter Mongo --version. Your response should indicate the version of the download. If this is the case, you have been successful with your setup.
@@ -62,7 +134,17 @@ Steps:
 Note: If you ran into issues and were not able to successfully install. Google any errors you may come across or reach out to the organization for assistance.
 
 
-### Installing MongoDB for Windows
+#### FOR Windows
+
+***Recommended***
+Follow the instructions:
+[MongoDB Install on Windows](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/) 
+[MongoDB Compass](https://www.mongodb.com/docs/compass/master/install/)
+[MongoDB Shell](https://www.mongodb.com/docs/mongodb-shell/install/)
+
+
+or 
+
 
 We will begin by installing MongoDB onto our local system.
 
@@ -106,7 +188,7 @@ Steps:
 
 13. While in the .bash_prifile, enter the lowercase i on your keyboard which should result in enabling the insert mode. You can confirm you are on the insert mode if you see "--INSERT--" on your terminal screen. Enter the following command:
 "alias mongod="/c/Program\ files/MongoDB/Server/versionnumber/bin/mongod.exe" followed by
-"alias mongo="/c/Program\ files/MongoDB/Server/versionnumber/bin/mongo.exe" where the versionnumber is the number of the version you downloaded up to the first digit after the decimal.
+"alias mongo="/c/Program\ files/MongoDB/Server/versionnumber/bin/mongo.exe" where the version number is the number of the version you downloaded up to the first digit after the decimal.
 
 
 Here's an example of what mine would look like:
@@ -123,10 +205,10 @@ Here's an example of what mine would look like:
 Note: If you ran into issues and were not able to successfully install. Google any errors you may come across or reach out to the organization for assistance.
 
 
+## Resources
 
-
-
-
+[MongoDB Install on macOS](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/)
+[MongoDB Install on Windows](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/)
 
 
 
