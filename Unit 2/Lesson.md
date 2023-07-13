@@ -18,17 +18,29 @@ To start, stop, restart, and list MongoDB services on macOS, you can use the fol
 
 1. Start MongoDB service:
    ```
-   brew services start mongodb-community@4.4
+   brew services start mongodb-community@5.0
+
+    or 
+
+   sudo brew services start mongodb-community
    ```
 
 2. Stop MongoDB service:
    ```
-   brew services stop mongodb-community@4.4
+   brew services stop mongodb-community@5.0
+
+       or 
+
+   sudo brew services stop mongodb-community
    ```
 
 3. Restart MongoDB service:
    ```
-   brew services restart mongodb-community@4.4
+   brew services restart mongodb-community@5.0
+
+       or 
+
+   sudo brew services restart mongodb-community
    ```
 
 4. List MongoDB services:
@@ -36,7 +48,13 @@ To start, stop, restart, and list MongoDB services on macOS, you can use the fol
    brew services list
    ```
 
-The above commands assume that you have MongoDB installed using Homebrew and the MongoDB service is managed by Homebrew services. The version specified in the commands is 4.4, but you can replace it with your installed MongoDB version if different.
+5. Install MongoDB compass:
+- Restart device
+```
+brew install --cask mongodb-compass
+```
+
+The above commands assume that you have MongoDB installed using Homebrew and the MongoDB service is managed by Homebrew services. The version specified in the commands is 5.0, but you can replace it with your installed MongoDB version if different.
 
 
 #### Service on Windows:
@@ -179,3 +197,26 @@ It is essential to follow best practices for database management to ensure data 
 - Monitor database performance and usage to identify bottlenecks and optimize resource utilization.
 
 Proper database management is crucial to ensure the reliability, security, and efficiency of your MongoDB deployments. By using the appropriate tools and following best practices, you can create, modify, and delete databases, collections, and documents effectively while maintaining the health of your MongoDB environment.
+
+
+## Troubleshooting commands
+
+### Error with boostrap fail. Run the following:
+``` 
+cd /tmp
+ls -a
+sudo rm mongodb-27017.sock
+
+brew services restart mongodb-community
+```
+
+### ensure the binaries are in a directory listed in your PATH environment variables:
+```
+sudo cp ./* /usr/local/bin/
+```
+
+### Installing just mongodb shell for mac
+
+```
+brew install mongodb-community-shell
+```
