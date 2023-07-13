@@ -8,6 +8,7 @@
 4. Working with nested documents and arrays
 5. Updating documents using UPDATE operators
 6. Deleting documents from a collection
+7. Assessment
 
 
 
@@ -266,3 +267,79 @@ Data management is crucial when removing documents from MongoDB collections. Her
 - Be aware of the cascading effects of document removal, particularly when dealing with related data and dependencies.
 
 By following proper data management practices and utilizing the `deleteOne()` and `deleteMany()` methods judiciously, you can effectively remove documents from MongoDB collections while maintaining the integrity and accuracy of your data.
+
+## Assessment
+
+Assessment:
+
+1. Which method is used to insert a single document into a MongoDB collection?
+   a. insertOne()
+   b. insert()
+   c. addOne()
+   d. addDocument()
+
+2. Which method is useful for retrieving a single document from a collection that matches a specific filter?
+   a. findOne()
+   b. findSingle()
+   c. getOne()
+   d. getSingle()
+
+3. Which operator is used for querying documents where a field value is greater than a specified value?
+   a. $gt
+   b. $lt
+   c. $eq
+   d. $ne
+
+4. How can you limit the number of returned documents in a MongoDB query?
+   a. Using the limit() method
+   b. Using the filter() method
+   c. Using the sort() method
+   d. Using the count() method
+
+5. What is the purpose of the $set operator in MongoDB?
+   a. Incrementing a numeric field value
+   b. Removing a field from a document
+   c. Updating specific fields within a document
+   d. Appending elements to an array field
+
+6. Which operator is used to append elements to an existing array in MongoDB?
+   a. $push
+   b. $pop
+   c. $addToSet
+   d. $pull
+
+7. Which method is used to remove a single document from a MongoDB collection?
+   a. deleteOne()
+   b. removeOne()
+   c. remove()
+   d. delete()
+
+8. How can you remove multiple documents from a MongoDB collection that match a specific criteria?
+   a. deleteMany()
+   b. removeMany()
+   c. removeAll()
+   d. delete()
+
+9. Which operator allows you to remove specific elements from an array field in MongoDB?
+   a. $pull
+   b. $push
+   c. $unset
+   d. $inc
+
+10. How can you access fields within nested documents in MongoDB?
+    a. Using dot notation
+    b. Using square brackets []
+    c. Using parentheses ()
+    d. Using curly braces {}
+
+Correct answers:
+1. a
+2. a
+3. a
+4. a
+5. c
+6. a
+7. a
+8. a
+9. a
+10. a
