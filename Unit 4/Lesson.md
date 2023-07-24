@@ -201,9 +201,7 @@ db.products.updateOne({ _id: ObjectId("6154e4cbe8d52b02409ae048") }, { $inc: { q
 
 d) $push operator:
 - Append elements to an array field within a document.
-```
-
-javascript
+```javascript
 db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $push: { arrayField: element } });
 ```
 Example:
