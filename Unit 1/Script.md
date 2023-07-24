@@ -13,7 +13,7 @@
 ## Introduction
 
 
-- Slide 1 -
+- Slide 1 
 
 Thank you for choosing Craft Knowledge's comprehensive MongoDB course. I'm Ana, your instructor for this course, and I'll guide you through all the essential concepts and operations of MongoDB.
 
@@ -23,12 +23,12 @@ As we start our journey, you will find that MongoDB is very versatile allowing i
 
 
 
-- Slide 2 -
+- Slide 2 
 
 Throughout this course, we will cover a range of important objectives. We will begin by exploring the fundamental question of "What is MongoDB?" This will provide us with a solid understanding of its purpose, features, and how it differs from other database management systems. We will then delve into the advantages and use cases of MongoDB, discovering the unique benefits it offers and the various scenarios in which it excels. Additionally, we will guide you through the installation and setup process, ensuring that you have a solid foundation to work with MongoDB effectively. By accomplishing these objectives, you will gain a comprehensive understanding of MongoDB, its strengths, and how to set it up for successful implementation in your projects.
 
 
-- Slide 3 -
+- Slide 3 
 
 
 MongoDB is a widely adopted NoSQL document-oriented database management system. It offers a highly flexible and scalable solution for storing and accessing data. In contrast to traditional SQL databases, MongoDB adopts a distinct approach by utilizing flexible JSON-like documents instead of tables and rows. This allows for the seamless management of diverse and evolving data structures, enabling developers to efficiently work with data in a more intuitive and adaptable manner.
@@ -36,7 +36,7 @@ MongoDB is a widely adopted NoSQL document-oriented database management system. 
 
 
 
-- Slide 4 -
+- Slide 4 
 
 
 MongoDB, a NoSQL database, offers several advantages over traditional SQL databases. Here are some of the key benefits of MongoDB:
@@ -54,14 +54,14 @@ MongoDB, a NoSQL database, offers several advantages over traditional SQL databa
 4.( Replication and high availability: ) Finally, it provides built-in replication, allowing you to create replicas of your data across multiple servers. This ensures data redundancy, fault tolerance, and automatic failover, resulting in high availability of your database.
 
 
-- slide 5 -
+- slide 5 
 
 These features and advantages make MongoDB a powerful and flexible database solution for a wide range of applications including content management systems, real-time analitics and reporting, and user data management
 
 
 
 
-- Slide 6 -
+- Slide 6 
 
 
 MongoDB provides installation options for multiple operating systems, ensuring compatibility with Windows, macOS, and Linux. To begin the installation, users can access installation packages directly from the official MongoDB website. The setup process involves configuring the MongoDB server, specifying data directories for storage, and initiating the database service. By following these steps, users can successfully set up and start MongoDB, allowing them to harness the power of this versatile database management system on their preferred operating system.
