@@ -95,27 +95,28 @@ Here are the instructions for starting and stopping the MongoDB service on both 
 #### Service on macOS:
 To start, stop, restart, and list MongoDB services on macOS, you can use the following commands:
 
-1. Start MongoDB service:
-```
-brew services start mongodb-community@4.4
-```
-
-2. Stop MongoDB service:
-```
-brew services stop mongodb-community@4.4
-```
-
-3. Restart MongoDB service:
-```
-brew services restart mongodb-community@4.4
-```
-
-4. List MongoDB services:
+1. List MongoDB services:
 ```
 brew services list
 ```
 
+2. Start MongoDB service:
+```
+brew services start mongodb-community@4.4
+```
+
+3. Stop MongoDB service:
+```
+brew services stop mongodb-community@4.4
+```
+
+4. Restart MongoDB service:
+```
+brew services restart mongodb-community@4.4
+```
+
 The commands assume that you have MongoDB installed using Homebrew and the MongoDB service is managed by Homebrew services. The version specified in the commands is 4.4, but you can replace it with your installed MongoDB version if different.
+
 
 #### Service on Windows:
 To start, stop, restart, and list MongoDB services on Windows, you can use the following commands:
@@ -185,7 +186,7 @@ For the most part, in the future, when working with MongoDB we will often be wor
 Let's add the following document:
 
 ```JSON
-[
+
 {
 "title": "It Ends With Us",
 "author": "Colleen Hoover",
@@ -193,7 +194,6 @@ Let's add the following document:
 "genres": ["Fiction", "Romance novel"],
 "rating": 8
 },
-
 
 {
 "title": "God Emperor of Dune",
@@ -203,7 +203,6 @@ Let's add the following document:
 "rating": 8
 },
 
-
 {
 "title": "A Game of Gods",
 "author": "Scarlett St. Clair",
@@ -211,6 +210,7 @@ Let's add the following document:
 "genres": ["Fairy tale", "Romance fantasy", "Erotic literature"],
 "rating": 5
 },
+
 {
 "title": "If You Tell",
 "author": "Gregg Olsen",
@@ -218,6 +218,7 @@ Let's add the following document:
 "genres": ["True crime", "Biograpy"],
 "rating": 9
 },
+
 {
 "title": "The Six",
 "author": "Anni Taylor",
@@ -225,17 +226,20 @@ Let's add the following document:
 "genres": ["Historical Fiction"],
 "rating": 6
 },
+
 {
 "title": "The White Plague",
 "author": "Frank Herbert",
 "pages": 343,
 "genres": ["Sci-fi", "Novel"],
 "rating": 9
-},
-]
+}
+
 ```
 
-Notice that if we hover over a document, we see the icons on the right which allows us to delete, edit, and we can also filter the data we see here. Let's assume we want to filter the data by rating:
+Notice that if we hover over a document, we see the icons on the right which allows us to delete, edit, and we can also filter the data we see here. 
+
+Now, Let's assume we want to filter the data by rating:
 
 ```JSON
 {rating: 9}
@@ -272,9 +276,6 @@ We'll be looking at MongoDB tools next as we start with how we should create, mo
 
 
 6. See the current database we are in: `db`
-
-
-7. List all collections in the current database: `show `
 
 
 7. To see collections in the current database: `show collections`
@@ -334,7 +335,7 @@ genres: ["Sci-fi", "Novel", "Adventure fiction"]
 ```JSON
 db.books.updateOne(
 {
-_id: <objectID>
+_id: ObjectId("64c03b4df3269f9ef06c2157")
 },
 {
 $set: {rating: 7,
