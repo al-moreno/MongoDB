@@ -2,69 +2,68 @@
 
 ## Table of Contents
 1. Running MongoDB service for macOS and Windows
-2. MongoDB Compass (GUI tool) 
-3. MongoDB Shell (GUI tool) 
+2. MongoDB Shell (GUI tool) 
+3. MongoDB Compass (GUI tool) 
 4. Managing databases, collections, and documents
 5. Assessment
 
 
 - Slide 1 - 
 
-Welcome to the third module of our MongoDB course! Congratulations on reaching this milestone in your learning journey. In this module, we will dive deeper into advanced topics and concepts that will further enhance your understanding and proficiency in working with MongoDB. 
+Welcome to the second unit of our MongoDB course!  In this module, we will dive deeper into advanced topics and concepts that will further enhance your understanding and proficiency in working with MongoDB. 
 
 
 - Slide 2 - 
 
-In this course, we will focus on the following objectives related to working with MongoDB:
+In this particular lesson, we will focus on the following objectives:
 
-1. You will learn how to set up and manage the MongoDB service on both macOS and Windows operating systems. We will cover the installation process, configuring the service, and starting and stopping the MongoDB server.
+1. You will learn how to set up and manage the MongoDB service on both macOS and Windows operating systems. We will cover the installation process, configuring the service, and starting and stopping the  server.
 
-2. We will explore MongoDB Compass, a powerful graphical user interface (GUI) tool that provides a user-friendly way to interact with MongoDB. You will learn how to navigate the interface, connect to MongoDB databases, and perform various operations such as creating databases, managing collections, and manipulating documents.
+2. We will explore MongoDB Compass, a powerful graphical user interface tool that provides a user-friendly way to interact with it. You will learn how to navigate the interface, connect to the databases, and perform various operations such as creating databases, managing collections, and manipulating documents.
 
-3. We will also introduce the MongoDB Shell, a command-line interface that allows you to execute commands and queries directly against the MongoDB server. You will gain hands-on experience using the shell to interact with databases, collections, and documents, and learn essential commands for data manipulation and querying.
+3. We will also introduce the MongoDB Shell, a command-line interface that allows you to execute commands and queries directly against the server. You will gain hands-on experience using the shell to interact with databases, collections, and documents, and learn essential commands for data manipulation and querying.
 
-4. Throughout the course, we will delve into the fundamental aspects of managing databases, collections, and documents in MongoDB. You will learn how to create and drop databases, design efficient collections, insert and retrieve documents, update and delete data, and perform advanced queries using MongoDB's powerful querying capabilities.
+4. Throughout the course, we will explore the fundamental aspects of managing databases, collections, and documents. You will learn how to create and drop databases, design efficient collections, insert and retrieve documents, update and delete data, and perform advanced queries using MongoDB's powerful querying capabilities.
 
-By the end of this course, you will have a comprehensive understanding of running the MongoDB service on macOS and Windows, utilizing MongoDB Compass for graphical management, utilizing MongoDB Shell for command-line operations, and effectively managing databases, collections, and documents in MongoDB.
+By the end of this course, you will have a comprehensive understanding of running the MongoDB service on macOS and Windows, utilizing MongoDB Compass for graphical management, utilizing MongoDB Shell for command-line operations, and effectively managing databases, collections, and documents.
 
 
 
 - Slide 3 - 
 
-To manage MongoDB services on macOS, you can use the following commands:
+To manage services on macOS, you can use the following commands:
 
-To start the MongoDB service, open the terminal and run the command: `brew services start mongodb-community@4.4`. This will initiate the MongoDB service and make it available for use.
+To start the service, open the terminal and run the command: `brew services start mongodb-community@4.4`. This will initiate the MongoDB service and make it available for use.
 
-If you need to stop the MongoDB service, execute the command: `brew services stop mongodb-community@4.4`. This will gracefully stop the MongoDB service and terminate its processes.
+If you need to stop the service, execute the command: `brew services stop mongodb-community@4.4`. This will stop the service and terminate its processes.
 
-To restart the MongoDB service, simply run the command: `brew services restart mongodb-community@4.4`. This will stop and then start the MongoDB service, ensuring a fresh instance is running.
+To restart the MongoDB service, simply run the command: `brew services restart mongodb-community@4.4`. This will stop and then start the service, ensuring a fresh instance is running.
 
-To view a list of all MongoDB services managed by Homebrew, use the command: `brew services list`. This will provide you with information about the running status of the MongoDB service.
+To view a list of all services managed by Homebrew, use the command: `brew services list`. This will provide the information about the running status of the MongoDB service.
 
-Please note that the provided commands assume you have MongoDB installed using Homebrew and that the MongoDB service is managed by Homebrew services. Adjust the version number in the commands to match your installed MongoDB version if it differs from 4.4.
+Please note that the provided commands assume you have MongoDB installed using Homebrew and that the MongoDB service is managed by Homebrew services. Adjust the version number in the commands to match your installed MongoDB version.
 
 
 - Slide 4 - 
 
 To manage MongoDB services on Windows, you can use the following commands in the Command Prompt with administrative privileges:
 
-To start the MongoDB service, run the command `net start MongoDB`. 
+To start the service, run the command `net start MongoDB`. 
 
-For stopping the MongoDB service, use `net stop MongoDB`. 
+For stopping the service, use `net stop MongoDB`. 
 
 If you want to restart the MongoDB service, you can enter `net stop MongoDB && net start MongoDB`. 
 
-To list the MongoDB services and obtain service information, execute the command `sc query MongoDB`.
+To list the services and obtain service information, execute the command `sc query MongoDB`.
 
-Please note that these commands assume MongoDB is installed as a Windows service. Adjust the command if your MongoDB service has a different name or if you have multiple MongoDB services installed. Ensure you run the Command Prompt as an administrator to have the necessary privileges for managing the MongoDB services.
-
+Please note that these commands assume MongoDB is installed as a Windows service. Adjust the command if your MongoDB service has a different name or if you have multiple MongoDB services installed. Ensure you run the Command Prompt as an administrator to have the necessary privileges for managing the services.
 
 
 
 
 - Slide 5 - 
 
-Next, I'd like to introduce you to MongoDB Compass, an intuitive graphical user interface designed for managing MongoDB databases. With MongoDB Compass, you can easily navigate, analyze, and interact with your MongoDB data in a visually appealing and user-friendly manner.
+Next, I'd like to introduce you to MongoDB Compass, an intuitive graphical user interface designed for managing MongoDB databases. With MongoDB Compass, you can easily navigate, analyze, and interact with your data in a visually appealing and user-friendly manner.
 
 
 One of the key features of MongoDB Compass is its ability to provide a comprehensive overview of your databases, collections, and documents. You can effortlessly explore the structure of your databases and collections, gaining insights into the relationships and organization of your data.
@@ -79,21 +78,21 @@ Additionally, MongoDB Compass offers advanced querying capabilities. You can con
 Furthermore, MongoDB Compass provides visualization tools that help you gain deeper insights into your data. You can create charts, graphs, and maps based on your MongoDB collections, allowing you to visualize trends, patterns, and geographical data.
 
 
-In summary, MongoDB Compass is an indispensable tool for managing and exploring your MongoDB databases. Its user-friendly interface, powerful querying capabilities, and visualization tools make it easier for developers, administrators, and data analysts to work with MongoDB data. Whether you're navigating databases, collections, or documents, MongoDB Compass provides a seamless experience that enhances your productivity and understanding of your MongoDB data.
+Without a doubt, it's an indispensable tool for managing and exploring your MongoDB databases. Its user-friendly interface, powerful querying capabilities, and visualization tools make it easier for developers to work with MongoDB data. Whether you're navigating databases, collections, or documents, MongoDB Compass provides a seamless experience that enhances your productivity and understanding of your data.
 
 
 
 
 - Slide 6 - 
 
-The MongoDB Shell is a powerful command-line interface that provides developers, administrators, and data analysts with direct access to MongoDB's functionality. With the MongoDB Shell, you can execute commands, run queries, and perform administrative tasks, all from the command line. This versatile tool allows you to interact with your MongoDB databases and collections efficiently and effectively. Whether you need to create, update, or delete documents, manage indexes, or perform complex aggregations, the MongoDB Shell provides a seamless and intuitive environment for executing these tasks. Its command-line interface offers flexibility and automation, making it an essential tool for working with MongoDB. With the MongoDB Shell, you have direct control and visibility into your MongoDB database operations, empowering you to manage and manipulate your data with ease.
+The MongoDB Shell is a powerful command-line interface that provides developers, administrators, and data analysts with direct access to MongoDB's functionality. With the MongoDB Shell, you can execute commands, run queries, and perform administrative tasks, all from the command line. This versatile tool allows you to interact with your databases and collections efficiently and effectively. Whether you need to create, update, or delete documents, manage indexes, or perform complex aggregations, the MongoDB Shell provides a seamless and intuitive environment for executing these tasks. Its command-line interface offers flexibility and automation, making it an essential tool. With the MongoDB Shell, you have direct control and visibility into your MongoDB database operations, empowering you to manage and manipulate your data with ease.
 
 
 - Slide 7 - 
 
-Next, we have a walkthrough on using MongoDB tools to create, modify, and delete databases, collections, and documents while emphasizing the importance of proper database management:
+Next, we will have a walkthrough on using MongoDB tools to create, modify, and delete databases, collections, and documents while emphasizing the importance of proper database management:
 
-1. Start by launching the MongoDB Shell or MongoDB Compass, depending on your preferred interface. This will provide you with a graphical or command-line interface to interact with MongoDB.
+1. Start by launching the MongoDB Shell, depending on your preferred interface. This will provide you with a graphical or command-line interface to interact with MongoDB.
 
 2. Creating a Database:
    - In the MongoDB Shell, use the command `use <database_name>` to switch to a specific database or select the database from the MongoDB Compass interface.
@@ -118,6 +117,83 @@ Next, we have a walkthrough on using MongoDB tools to create, modify, and delete
 - Consider data modeling techniques to create efficient and maintainable database schemas.
 - Monitor database performance and usage to identify bottlenecks and optimize resource utilization.
 
+
+- Hands on -
+
+We'll move away a bit from our slides so that I can introducue you to another tool which is MongoDB Compass. MongoDB Compass allows us to interact with MongoDB databases. It's a powerful tool that allows for visiual exploration and managment of our data  while simplifying many administragtive tasks.
+
+For the most part, in the future, when working with mongoDB we will often be working directly from the Shell, which we will explore further next. That said, for learning purposes, and for visualization of our data, the Compass tool is very helpful since it allows us to see all of our databases, collections and documents. From the Compass tool, we are also able to add new documents, update existing document and delete them as well. Therefor, I'd like to take a moment to introduce you to the tool, how it is we will get it up and running with a database and how to interact with that data 
+
+***Compass***
+
+1. Head to Compass and find the welcome screen with an input for the connection string, which is a special MongoDB URL for connecting to a MongoDB cluster.
+
+2. Click on the "Connect" option without adding a connection string to connect to the local MongoDB. Make sure the MongoDB service is running if the connection doesn't work.
+
+3. After connecting, view the available databases, which may include pre-made ones like the "local" database containing startup log data. Click on a database to see its collections and documents.
+
+4. To add a new database, click the "+" sign above the database list, provide a name (e.g., "bookstore"), and create collections within the database for different types of data (e.g., books, authors, customers).
+
+5. To add data to a collection, select it and click "Add Data" > "Insert Documents." MongoDB will generate an automatic ID for each document (record) in the collection. You can edit the data in JSON-like format using curly brackets.
+
+```JSON
+{
+"title": "The Day that Changed Everything",
+"author": "Catherine Miller", 
+"pages": 500,
+"genres": ["Fiction", "Romance novel"],
+"rating": 9
+}
+```
+
+Let's add the following document:
+
+```JSON
+[
+{
+"title": "It Ends With Us",
+"author": "Colleen Hoover", 
+"pages": 460,
+"genres": ["Fiction", "Romance novel"],
+"rating": 8
+},
+
+{
+"title": "A Game of Gods",
+"author": "Scarlett St. Clair", 
+"pages": 247,
+"genres": ["Fairy tale", "Romance fantasy", "Erotic literature"],
+"rating": 5
+},
+
+{
+"title": "If You Tell",
+"author": "Gregg Olsen", 
+"pages": 473,
+"genres": ["True crime", "Biograpy"],
+"rating": 9
+},
+{
+"title": "The Six",
+"author": "Anni Taylor", 
+"pages": 746,
+"genres": ["Historical Fiction"],
+"rating": 6
+}
+]
+```
+
+Notice that if we hover over a document, we see the icons on the right which allows us to delete, edit, and we can also filter the data we see here. Let's assume we want to filter the data by rating:
+
+```JSON
+{rating: 9}
+```
+
+But we'll explore filtering in more detail in a later lesson. 
+
+Finally, if we want to delete a database or collection we simply click on the options associated with it and select the bin or the drop collection option. 
+
+So this is the basics of Compass which we will be using to visualize our data as we go on. 
 
 
 
