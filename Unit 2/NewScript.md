@@ -257,137 +257,6 @@ Please note that you might need to adjust the command if your MongoDB service ha
 
 
 
-## MongoDB Shell
-
-
-We'll be looking at MongoDB tools next as we start with how we should create, modify, and delete databases, collections, and documents in Shell:
-
-
-1. Start by launching the MongoDB Shell, depending on your preferred interface. This will provide you with a graphical or command-line interface to interact with MongoDB.
-
-
-### Shell for MacOS
-
-
-To launch the MongoDB shell on macOS, follow these steps:
-
-
-1. Open the Terminal application on your macOS. You can find it in the "Utilities" folder within the "Applications" folder, or you can use Spotlight search (Cmd + Space) and type "Terminal" to find it.
-
-
-2. Once the Terminal is open, type the following command to launch the MongoDB shell:
-
-
-```
-mongo
-```
-
-
-3. Press Enter, and the MongoDB shell should start. It will connect to the default MongoDB instance running on your local machine.
-
-
-That's it! You should now see the MongoDB shell prompt, which looks like this:
-
-
-```
-MongoDB shell version: x.x.x
-connecting to: test
->
-```
-
-
-Replace "x.x.x" with the version number of the MongoDB shell installed on your machine. Now you can interact with your MongoDB instance using various commands in the shell.
-
-
-
-
-
-
-### Shell for Windows
-
-
-
-
-To launch the MongoDB shell on Windows, follow these steps:
-
-
-1. Open the Command Prompt or PowerShell on your Windows machine. You can do this by searching for "cmd" or "PowerShell" in the Start menu or using the "Run" dialog (Win + R).
-
-
-2. Navigate to the MongoDB installation directory. By default, MongoDB is installed in the "C:\Program Files\MongoDB\Server\{version}\bin" folder. Replace "{version}" with the specific version number installed on your system.
-
-
-3. Once you are in the "bin" directory, type the following command to launch the MongoDB shell:
-
-
-For Command Prompt:
-```
-mongo
-```
-
-
-For PowerShell:
-```
-.\mongo
-```
-
-
-4. Press Enter, and the MongoDB shell should start. It will connect to the default MongoDB instance running on your local machine.
-
-
-You should now see the MongoDB shell prompt, which looks like this:
-
-
-```
-MongoDB shell version: x.x.x
-connecting to: test
->
-```
-
-
-Replace "x.x.x" with the version number of the MongoDB shell installed on your machine. Now you can interact with your MongoDB instance using various commands in the shell.
-
-
-
-
-***MongoDB Shell for all***
-
-
-Now all together we implement the following commands to perform the indicated actions:
-
-
-
-
-2. Creating a Database:
-- In the MongoDB Shell, use the command `use <database_name>` to switch to a specific database or select the database from the MongoDB Compass interface.
-- To create a new database, execute the command `db.createCollection("<collection_name>")` in the MongoDB Shell or use the GUI option available in MongoDB Compass.
-
-
-3. Modifying a Database:
-- To modify a database, use various commands available in the MongoDB Shell or the GUI options in MongoDB Compass. For example, you can insert a new document using `db.<collection_name>.insertOne(<document>)`, update an existing document using `db.<collection_name>.updateOne(<filter>, <update>)`, or delete a document using `db.<collection_name>.deleteOne(<filter>)`.
-
-
-4. Creating and Modifying Collections:
-- In MongoDB Compass, navigate to the selected database and use the GUI options to create a new collection or modify an existing one.
-- In the MongoDB Shell, use the command `db.createCollection("<collection_name>")` to create a new collection within the selected database.
-
-
-5. Deleting Databases and Collections:
-- In MongoDB Compass, select the database or collection you want to delete and use the GUI options to delete it.
-- In the MongoDB Shell, use the command `db.<collection_name>.drop()` to delete a collection, and the command `db.dropDatabase()` to delete an entire database.
-6. Proper Database Management:
-
-
-- Regularly review and optimize indexes to improve query performance.
-- Implement data backups and disaster recovery plans to safeguard against data loss.
-- Use access control mechanisms to secure the database and limit user privileges.
-- Consider data modeling techniques to create efficient and maintainable database schemas.
-- Monitor database performance and usage to identify bottlenecks and optimize resource utilization.
-
-
-
-
-
 
 ## MongoDB Compass
 
@@ -440,6 +309,13 @@ Let's add the following document:
 "rating": 8
 },
 
+{
+"title": "God Emperor of Dune",
+"author": "Frank Herbert",
+"pages": 340,
+"genres": ["Sci-fi", "Novel"],
+"rating": 8
+},
 
 {
 "title": "A Game of Gods",
@@ -448,8 +324,6 @@ Let's add the following document:
 "genres": ["Fairy tale", "Romance fantasy", "Erotic literature"],
 "rating": 5
 },
-
-
 {
 "title": "If You Tell",
 "author": "Gregg Olsen",
@@ -463,7 +337,14 @@ Let's add the following document:
 "pages": 746,
 "genres": ["Historical Fiction"],
 "rating": 6
-}
+},
+{
+"title": "The White Plague",
+"author": "Frank Herbert",
+"pages": 343,
+"genres": ["Sci-fi", "Novel"],
+"rating": 9
+},
 ]
 ```
 
@@ -478,15 +359,130 @@ Notice that if we hover over a document, we see the icons on the right which all
 
 But we'll explore filtering in more detail in a later lesson.
 
-
 Finally, if we want to delete a database or collection we simply click on the options associated with it and select the bin or the drop collection option.
-
 
 So this is the basics of Compass which we will be using to visualize our data as we go on.
 
 
 
 
+## MongoDB Shell
+
+We'll be looking at MongoDB tools next as we start with how we should create, modify, and delete databases, collections, and documents in Shell:
 
 
+1. Start by launching the MongoDB Shell. This will provide you with a command-line interface to interact with MongoDB.
+    - In Windows: `mongosh`
+    - In Macos: `mongo`
+    - In Compass: Direct
+
+2. To create a new database I would simply have to switch to the non-existing database and add collections, MongoDB will create that database for us.
+
+3. Display all databases: `show dbs`
+
+4. Switch to a database : `use bookstore` 
+
+5. To Clear screen: `cls`
+
+6. See current database we are in: `db`
+
+
+7. List all collections in current database: `show `
+
+
+7. To see collections in current database: `show collections`
+
+
+8. We can also create variables: `var userName = "Michelangelo"`. and if we enter the command: `userName` we get back the value of that variable. We can change it to `userName = "Leonardo"` and I can say `userName` again and we get the updated variable value. 
+
+
+9. Currently, looking on Compass we see the database of bookstore and inside there is a books collection. Inside the books collection we see a few documents. We added those documents in the previous lesson. Next, I'd like to show you how we add documents to a collection from the Shell. We'll begin by first making sure we are in the bookstore database (`use bookstore`).  Once in the bookstore database, we'll need to reference a collection (`db.books`). Next we append a method `inserOne()`. This function will insert a single document where we pass an argument: 
+```JSON
+db.books.insertOne({
+    title: "The Nurse's Secret",
+    author: "Amanda Skenandore",
+    pages: 300,
+    rating: 7,
+    genres:["Historical fiction", "Medical fiction"] 
+})
+```
+Looking back at Compass we now see our new document in the books collection. 
+
+By the way, you don't need a collection to excist for you to add a document. MongoDB will automaticly add it for you to insert a document. 
+```JSON
+db.authors.insertOne({
+    name: "Amanda Skenandore",
+    age: 33,
+})
+```
+
+We can also insert many documents at once by using a different method:
+```JSON
+db.books.insertMany([
+{
+    title: "The Light Fantastic",
+    author: "Terry Pratchett",
+    pages: 250,
+    rating: 6,
+    genres: ["Fantasy"]
+},
+{
+    title: "Dune",
+    author: "Frank Herbert",
+    pages: 500,
+    rating: 10,
+    genres: ["Sci-fi", "Novel", "Adventure fiction"]
+}
+
+])
+
+```
+
+
+
+10. We've seen how to add documents, now we want to see how we can update documents and we can do that by using one of two methods: `updateOne()` or `updateMany()`. 
+   ***Update one***
+    - First we'll want to see all the documents we have by using the `db.books.find()`.
+    - Say I want to update the number of pages and rating in a specific book. We'll do so by using the Object ID: `db.collection.updateOne()` and it takes to arguments, the first is what we want to update and the second will specifiy the fields we want to update, we do so with a `$set` operator
+        ```JSON
+        db.books.updateOne(
+        {
+          _id: <objectID>
+        },
+        {
+           $set: {rating: 7, 
+                pages: 260}
+        }
+        )
+        ```
+
+    - Well now want to verify by saying `db.books.find()`
+
+    ***Update Many*** 
+    - What if we want to update many documents at once? Well start with looking for the documents we want to update by running: `db.books.find()`
+    - Say we've misspelled an authors name and we need to change all the books for that author to have the correct spelling. We can use the `updateMany()` method where we provide to arguments, the first to tell MongoDB what we want to update and the second tells it what we want the change to be: 
+        ```JSON
+        db.books.updateMany(
+            {
+                author: "Frank Herbert"
+            },
+            {$set: {author: "Frank Herbertt" }}
+            )
+        ```
+
+    - We'll confirm:  `db.books.find()`
+
+
+11. The next thing we'll look at is how we go about deleteing apart of a collection but before, to avoid having to type everything again or to serve as a backup incase we make a mistake we'll want to export the data. Going to Compass, we click on the option that says `Export Full Collection`. Once we have that data we can proceed with deleteing data. Similar to adding documents we have to methods available, we have `deleteOne()` and `deleteMany()` 
+
+    - 1st well start by saying: `db.books.find()` so that we can see all the books documents in the collection. I'll then copy the Object ID of one since I will be deleting the document with the ID. We want to then enter `db.books.deleteOne({_id:<paste id>})`. We use the ID because it's unique to this document. 
+        - we then want to confirm that it is gone: `db.books.find()`
+
+    - To delete many documents: `db.books.deleteMany({author: "Frank Herbert"})`.
+        - we then want to confirm that it is gone: `db.books.find()`
+
+
+5. Deleting Databases and Collections:  
+    - In the MongoDB Shell, use the command `db.<collection_name>.drop()` to delete a collection, 
+    - To delete a database entirely:  `db.dropDatabase()`
 
