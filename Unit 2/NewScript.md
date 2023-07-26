@@ -186,7 +186,13 @@ For the most part, in the future, when working with MongoDB we will often be wor
 Let's add the following document:
 
 ```JSON
-
+{
+"title": "The Day that Changed Everything",
+"author": "Catherine Miller",
+"pages": 500,
+"genres": ["Fiction", "Romance novel"],
+"rating": 9
+},
 {
 "title": "It Ends With Us",
 "author": "Colleen Hoover",
