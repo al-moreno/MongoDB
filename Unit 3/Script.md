@@ -16,7 +16,7 @@ Welcome to your second lesson on MongoDB. We're glad to have you back!
 
 - Slide 2 -
 
-In this module, we will cover a range of essential objectives related to MongoDB's data model and schema design. We will start by exploring the Collections and Documents data model, understanding how data is organized and stored within MongoDB. Next, we will dive into the BSON format and various data types supported by MongoDB, equipping you with the knowledge to effectively work with data in this format. We will then delve into schema design principles and best practices, guiding you on how to structure your data efficiently and optimize performance. Additionally, we will discuss the pros and cons of using embedded documents versus referencing, enabling you to make informed decisions when designing your schema. Finally, we will explore different types of relationships, including one-to-one, one-to-many, and many-to-many, and learn how to model them effectively in MongoDB. By the end of this module, you will have a comprehensive understanding of MongoDB's data model, schema design considerations, and how to manage relationships within your data.
+In this module, we will cover a range of essential objectives related to MongoDB's data model and schema design some of which we briefly touched on in the previous lesson. We will start by exploring the Collections and Documents data model, understanding how data is organized and stored within MongoDB. Next, we will dive into the BSON format and various data types supported by MongoDB, equipping you with the knowledge to effectively work with data in this format. We will then delve into schema design principles and best practices, guiding you on how to structure your data efficiently and optimize performance. Additionally, we will discuss the pros and cons of using embedded documents versus referencing, enabling you to make informed decisions when designing your schema. Finally, we will explore different types of relationships, including one-to-one, one-to-many, and many-to-many, and learn how to model them effectively in MongoDB. By the end of this module, you will have a comprehensive understanding of MongoDB's data model, schema design considerations, and how to manage relationships within your data.
 
 
 
@@ -51,21 +51,20 @@ In the previous slide, we provided an example of a document whose content was in
 
 BSON supports a wide range of data types, allowing for the representation of diverse information within MongoDB documents. Here are some commonly used data types in MongoDB:
 
-1. Strings: MongoDB supports various string types, including regular strings (UTF-8 encoded), binary data, and UUIDs.
+1. MongoDB supports various string types, including regular strings (UTF-8 encoded), binary data, and UUIDs.
 
-2. Numbers: MongoDB supports different numeric data types, such as integers (32-bit and 64-bit), floating-point numbers, and decimal data types for precise arithmetic operations.
+2. It also supports different numeric data types, such as integers (32-bit and 64-bit), floating-point numbers, and decimal data types for precise arithmetic operations.
 
-3. Booleans: MongoDB provides a Boolean data type for representing true or false values.
+3. It also provides a Boolean data type for representing true or false values.
 
-4. Dates: MongoDB supports storing dates and timestamps. Dates are represented as a 64-bit integer value, which represents the number of milliseconds since the time of Unix (January 1, 1970).
+4. Additonally, MongoDB supports storing dates and timestamps. Dates are represented as a 64-bit integer value, which represents the number of milliseconds since the time of Unix (January 1, 1970).
 
-5. Arrays: Arrays in MongoDB allow for the storage of multiple values within a single field. They can contain values of different data types and can be nested to create multi-dimensional arrays.
+5. MongoDB allow for the storage of multiple values within a single field. They can contain values of different data types and can be nested to create multi-dimensional arrays.
 
-6. Embedded Documents: MongoDB allows for the nesting of documents within other documents, enabling the creation of hierarchical and complex data structures. This feature is useful for representing relationships or grouping related data.
+6. It enables the the nesting of documents within other documents, enabling the creation of hierarchical and complex data structures. This feature is useful for representing relationships or grouping related data.
 
-In addition to these basic data types, BSON also supports more specialized data types, such as geospatial data, binary data, regular expressions, and timestamps.
+In addition to these basic data types, BSON also supports more specialized data types, such as geospatial data, binary data, regular expressions, and timestamps enabling MongoDB to handle diverse data structures and accommodate the needs of various applications. 
 
-By supporting a wide range of data types, BSON enables MongoDB to handle diverse data structures and accommodate the needs of various applications. It provides a flexible and efficient way to represent and store data within MongoDB's document-oriented model.
 
 
 - Slide 6 -
