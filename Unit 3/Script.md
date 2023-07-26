@@ -9,14 +9,13 @@
 6. Assessment
 
 
-
 ## Collections & Documents
 - Slide 1 - 
-Welcome to your second lesson on MongoDB. We're glad to have you back!
+Welcome to your third lesson on MongoDB. We're glad to have you back!
 
 - Slide 2 -
 
-In this module, we will cover a range of essential objectives related to MongoDB's data model and schema design some of which we briefly touched on in the previous lesson. We will start by exploring the Collections and Documents data model, understanding how data is organized and stored within MongoDB. Next, we will dive into the BSON format and various data types supported by MongoDB, equipping you with the knowledge to effectively work with data in this format. We will then delve into schema design principles and best practices, guiding you on how to structure your data efficiently and optimize performance. Additionally, we will discuss the pros and cons of using embedded documents versus referencing, enabling you to make informed decisions when designing your schema. Finally, we will explore different types of relationships, including one-to-one, one-to-many, and many-to-many, and learn how to model them effectively in MongoDB. By the end of this module, you will have a comprehensive understanding of MongoDB's data model, schema design considerations, and how to manage relationships within your data.
+In this module, we will cover a range of essential objectives related to data model's and schema design's some of which we briefly touched on in the previous lesson. We will start by exploring the Collections and Documents data model, understanding how data is organized and stored within MongoDB. Next, we will dive into the BSON format and various data types supported by MongoDB. We will then discuss schema design principles and best practices, guiding you on how to structure your data efficiently and optimize performance. Additionally, we will consider the pros and cons of using embedded documents versus referencing. Finally, we will explore different types of relationships, including one-to-one, one-to-many, and many-to-many, and learn how to model them effectively. By the end of this module, you will have a comprehensive understanding of MongoDB's data model, schema design considerations, and how to manage relationships within your data.
 
 
 
@@ -24,7 +23,7 @@ In this module, we will cover a range of essential objectives related to MongoDB
 
 In MongoDB, data is organized into collections and documents. Collections are similar to tables in relational databases, as they serve as containers for storing related data. Each collection can contain multiple documents, which are comparable to records or rows in relational databases.
 
-Documents in MongoDB are JSON-like data structures that store information. They consist of key-value pairs, where the keys represent the field names, and the values store the corresponding data. Documents within a collection can have different structures, allowing flexibility in the data model. This contrasts with relational databases, where tables enforce a fixed schema for all records.
+Documents are JSON-like data structures that store information. They consist of key-value pairs, where the keys represent the field names, and the values store the corresponding data. Documents within a collection can have different structures, allowing flexibility in the data model. 
 
 Parallels can be drawn between collections and tables, as both serve as containers for data storage. Similarly, documents and records represent individual instances of data within these containers. However, MongoDB's document-oriented approach offers more flexibility in terms of data modeling and schema design compared to the structured nature of tables and records in relational databases.
 
@@ -32,30 +31,28 @@ Overall, collections and documents in MongoDB provide a flexible and adaptable w
 
 - Slide 4 - 
 
-Let's consider an example to understand the concept of the Collections and Documents data model in MongoDB. Imagine we are building an digital library catalog platform.
-
-In MongoDB, we would create a collection called "Books" to store all the various title for books. Each individual book would be represented as a document within the Books collection.
+Let's consider an example to understand the concept of Collections and Documents data model in MongoDB. Imagine we are building an digital library. We would create a collection called "Books" to store all the various title for books. Each individual book would be represented as a document within the Books collection.
 
 
-A document in MongoDB is similar to a JSON object and consists of key-value pairs. For instance, a document for a  book might have fields like "title," "author," "pages," and "rating." The values for these fields would contain the specific information for each book, such as the title of the book, the author's name, the number of pages or its rating.
+A document is similar to a JSON object and consists of key-value pairs. For instance, a document for a  book might have fields like "title," "author," "pages," and "rating." The values for these fields would contain the specific information for each book, such as the title of the book, the author's name, the number of pages or its rating.
 
 
-With the Collections and Documents data model, we can easily add, modify, and retrieve books. Each document within the "Books" collection can have a different structure if needed, allowing flexibility in the data model. For example, some books may have additional fields like "Category" or "Date Published," while others may not.
+With the Collections and Documents data model, we can easily add, modify, and retrieve books. Each document within the "Books" collection can have a different structure if needed, allowing flexibility in the data model. For example, some books may have additional fields like "Category" or "ISDN numbers," while others may not.
 
-By utilizing the Collections and Documents data model in MongoDB, we can organize and store our books in a scalable and efficient manner, making it easier to manage and query our data.
+By utilizing the Collections and Documents data model, we can organize and store our books in a scalable and efficient manner, making it easier to manage and query our data.
 
 - Slide 5 - 
 
 
 In the previous slide, we provided an example of a document whose content was in BSON format. BSON stands for Binary JSON, which is the binary representation format used by MongoDB to store and transmit data. It is designed to be efficient, compact, and fast to parse, making it well-suited for a document-based data model.
 
-BSON supports a wide range of data types, allowing for the representation of diverse information within MongoDB documents. Here are some commonly used data types in MongoDB:
+BSON supports a wide range of data types, allowing for the representation of diverse information within documents. Here are some commonly used data types:
 
-1. MongoDB supports various string types, including regular strings (UTF-8 encoded), binary data, and UUIDs.
+1. MongoDB supports various string types, including regular strings, binary data, and UUIDs.
 
-2. It also supports different numeric data types, such as integers (32-bit and 64-bit), floating-point numbers, and decimal data types for precise arithmetic operations.
+2. It also supports different numeric data types, such as integers, floating-point numbers, and decimal data types for precise arithmetic operations.
 
-3. It also provides a Boolean data type for representing true or false values.
+3. It provides a Boolean data type for representing true or false values.
 
 4. Additonally, MongoDB supports storing dates and timestamps. Dates are represented as a 64-bit integer value, which represents the number of milliseconds since the time of Unix (January 1, 1970).
 
@@ -71,17 +68,17 @@ In addition to these basic data types, BSON also supports more specialized data 
 
 When designing MongoDB schemas, there are several important considerations and best practices to ensure effectiveness, scalability, and optimal performance. Here are some key aspects to keep in mind:
 
-1. Design your schema with scalability in mind. Consider the anticipated data growth and the expected workload. Use sharding to distribute data across multiple servers or clusters, allowing for horizontal scaling. Plan your indexes carefully to support efficient queries and avoid performance bottlenecks.
+1. Design your schema with scalability in mind. Consider the anticipated data growth and the expected workload. Plan your indexes carefully to support efficient queries and avoid performance bottlenecks.
 
-2. Determine the relationships between your data and choose an appropriate data modeling approach. MongoDB supports embedded documents and referencing. Use embedding for one-to-one or one-to-many relationships where the related data is frequently accessed together. Use referencing for many-to-many relationships or when the related data is large and accessed infrequently. Strive for a balance between denormalization for performance and normalization for data integrity.
+2. Determine the relationships between your data and choose an appropriate data modeling approach. MongoDB supports embedded documents and referencing. Use embedding for one-to-one or one-to-many relationships where the related data is frequently accessed together. Use referencing for many-to-many relationships or when the related data is large and accessed infrequently. 
 
-3. Understand the read-and-write patterns of your application. Optimize your schema design to align with the most frequent operations. Consider the data access patterns and design indexes accordingly to support efficient queries. Use the appropriate write concern and read preference settings based on your application's requirements.
+3. Understand the read-and-write patterns of your application. Optimize your schema design to align with the most frequent operations. Consider the data access patterns and design indexes accordingly to support efficient queries. 
 
-4. Standardize your schema when necessary to improve read performance. By embedding related data in a single document, you can retrieve all necessary information in one query, reducing the need for joins. However, be mindful of potential data duplication and the trade-off between query performance and data consistency.
+4. Standardize your schema when necessary to improve read performance. We do this by embedding related data in a single document, you can retrieve all necessary information in one query, reducing the need for joins. However, be mindful of potential data duplication and the trade-off between query performance and data consistency.
 
 5. Design indexes based on your application's query patterns. Create indexes for frequently queried fields and for fields involved in sorting or filtering operations. Ensure your indexes fit in memory to avoid disk accesses, which can significantly impact performance.
 
-6. Anticipate future data growth and evolving requirements. Design your schema to accommodate future changes without major disruptions. Consider the impact of schema modifications on existing data and plan for migration strategies if needed.
+6. Anticipate future data growth and evolving requirements. Design your schema to accommodate future changes without major disruptions. Consider the impact of schema modifications on existing data and remeber to plan for migration strategies if needed.
 
 7. Regularly monitor the performance of your MongoDB deployment. Utilize MongoDB's profiling and monitoring tools to identify bottlenecks and optimize query performance. Continuously refine and improve your schema design based on real-world usage patterns.
 
@@ -90,37 +87,38 @@ By considering these best practices and aligning your schema design with your ap
 
 - Slide 7 - 
 
-When deciding between embedding documents within other documents or referencing them in MongoDB, it's important to consider the trade-offs in performance, query complexity, and data integrity. Here are the pros and cons of each approach:
+When deciding between embedding documents within other documents or referencing them, it's important to consider the trade-offs in performance, query complexity, and data integrity. Here are the pros and cons of each approach:
 
-Here are the pros for Embedding Documents:
+Pros of Embedding Documents:
 
 
-1. Embedded documents can be retrieved in a single query, reducing the need for complex joins and improving read performance.
-2. With embedded documents, related data is stored together, making it easier and faster to access all necessary information.
-3. Embedding allows for flexible and dynamic schema design, as documents within a collection can have different structures.
+1. It can be retrieved in a single query, reducing the need for complex joins and improving read performance.
+2. Related data is stored together, making it easier and faster to access all necessary information.
+3. It allows for flexible and dynamic schema design, as documents within a collection can have different structures.
 
-The cons for Embedding documents consist of:
+The cons for Embedding documents are as follows:
 
-1. Embedding documents can result in data duplication if the same information is repeated in multiple documents, leading to increased storage requirements.
+1. It can result in data duplication if the same information is repeated in multiple documents, leading to increased storage requirements.
 2. If data needs to be updated across multiple documents, it can lead to update anomalies and the potential for inconsistent data if not carefully managed.
 3. Embedding documents may limit scalability when dealing with large amounts of related data, as the document size can become unwieldy.
 
-Next we'll consider the pros and cons for Referencing Documents.
-We'll begin with the pros:
+Next we'll consider the pros and cons of Referencing Documents.
 
+We'll begin with considering the pros:
 
 1. Referencing promotes data normalization by storing related data in separate collections, reducing data redundancy and ensuring consistency.
-2. Updates to referenced data only need to be performed in one place, reducing the risk of inconsistencies and update anomalies.
+2. Whatps more, updates to referenced data only need to be performed in one place, reducing the risk of inconsistencies and update anomalies.
 3. Referencing can handle large amounts of related data more efficiently, as the document size remains manageable.
 
-The cons for Reference documents consis of:
+The cons for Reference documents consist of the following:
 
 1. Referencing requires additional queries and joins to retrieve related data, resulting in increased query complexity and potentially impacting performance.
-2. Referencing can lead to slower read performance due to the need for multiple queries and joins to fetch all required data.
-3. Referencing adds additional overhead in terms of maintaining relationships, managing foreign keys, and handling multiple queries.
+2. It can lead to slower read performance due to the need for multiple queries and joins to fetch all required data.
+3. Finally, it adds additional overhead in terms of maintaining relationships, managing foreign keys, and handling multiple queries.
 
 
-Ultimately, the choice between embedding and referencing depends on factors such as the nature of the data relationships, the frequency of data access, the size of related data, and the specific performance requirements of the application. Striking a balance between denormalization for performance gains and normalization for data integrity is crucial in designing an effective MongoDB schema.
+Ultimately, the choice between embedding and referencing depends on factors such as the nature of the data relationships, the frequency of data access, the size of related data, and the specific performance requirements of the application. 
+
 
 
 
@@ -128,11 +126,11 @@ Ultimately, the choice between embedding and referencing depends on factors such
 
 In MongoDB, modeling relationships means designing data structure to represent connections between entities. It determines how documents in collections are related and how these relationships are represented in the database.
 
-We've discussed the benefits of modeling relationships include logical and efficient storage and retrieval of related data, ensuring data integrity, and facilitating efficient querying. It allows defining connections and interactions between different entities in the application.
+We've discussed the benefits of modeling relationships which include logical and efficient storage and retrieval of related data, ensuring data integrity, and facilitating efficient querying. It establishes defining connections and interactions between different entities in the application.
 
-There are two approaches to modeling relationships in MongoDB: embedding and referencing. Embedding involves nesting related data within a document, while referencing stores references or identifiers to related documents.
+In the previous slide, we discussed the two approaches to modeling relationships in MongoDB:  embedding and referencing. We stated that embedding involves nesting related data within a document, while referencing stores references or identifiers to related documents.
 
-Accurate modeling and appropriate approach selection (embedding or referencing) ensure efficient data organization, retrieval, and manipulation. It enables representation of complex data structures and accurate reflection of entity relationships in the application.
+Accurate modeling and appropriate approach selection ensure efficient data organization, retrieval, and manipulation. It enables representation of complex data structures and accurate reflection of entity relationships in the application.
 
 Next, we'll explore the various relationship models which include one-to-one, one-to-many, and many-to-many relationships. 
 
@@ -190,7 +188,6 @@ Overall, the concept of collections and documents in MongoDB provides a flexible
 
 ## BSON format and data types
 
-Continuing on with BSON, which stands for Binary JSON, it is the binary representation format used by MongoDB to store and transmit data. It is designed to be efficient, compact, and fast to parse, making it well-suited for a document-based data model.
 
 We mentioned previously that MongoDB supports various data types within BSON, allowing for the representation of diverse information within documents. Here are some commonly used data types supported by MongoDB:
 
@@ -199,9 +196,7 @@ We mentioned previously that MongoDB supports various data types within BSON, al
 Example:
 ```javascript
 {
-  "name": "John Doe",
-  "email": "john@example.com",
-  "bio": "Lorem ipsum dolor sit amet"
+  "title": "The Covenant of Water"
 }
 ```
 
@@ -210,9 +205,8 @@ Example:
 Example:
 ```javascript
 {
-  "age": 25,
-  "price": 9.99,
-  "quantity": 10
+  "title": "The Covenant of Water",
+  "pages": 483
 }
 ```
 
@@ -221,8 +215,9 @@ Example:
 Example:
 ```javascript
 {
-  "isAvailable": true,
-  "isAdmin": false
+  "title": "The Covenant of Water",
+  "pages": 483,
+  "digital": true
 }
 ```
 
@@ -231,7 +226,10 @@ Example:
 Example:
 ```javascript
 {
-  "createdAt": ISODate("2022-07-01T10:00:00Z"),
+  "title": "The Covenant of Water",
+  "pages": 483,
+  "digital": true,
+  "dateAdd": 2023-07-15T10:58:20.000+00:00
 }
 ```
 
@@ -242,8 +240,11 @@ Example:
 Example:
 ```javascript
 {
-  "tags": ["mongodb", "database", "nosql"],
-  "scores": [80, 85, 90, 95]
+  "title": "The Covenant of Water",
+  "pages": 483,
+  "digital": true,
+  "dateAdd": 2023-07-15T10:58:20.000+00:00,
+  "genres": ["Historical fiction", "Saga]
 }
 ```
 
@@ -252,24 +253,27 @@ Example:
 Example:
 ```javascript
 {
-  "name": "John Doe",
-  "address": {
-    "street": "123 Main St",
-    "city": "New York",
-    "state": "NY",
-    "zipcode": "10001"
+  "title": "The Covenant of Water",
+  "pages": 483,
+  "digital": true,
+  "dateAdd": 2023-07-15T10:58:20.000+00:00,
+  "genres": ["Historical fiction", "Saga],
+  "contactInfo": {
+    "name": "Abraham Verhese",
+    "email": "abrahamv@stanford.edu",
+    "phone": "(908) 253-6030"
   }
 }
 ```
 
-In addition to these basic data types, BSON also supports more specialized data types, such as geospatial data, binary data, regular expressions, and timestamps, I would encourage you to research some of these data types further.
+I mentioned previously that in addition to these basic data types, BSON also supports more specialized data types, such as geospatial data, binary data, regular expressions, and timestamps, I would encourage you to research some of these data types further.
 
 By supporting a wide range of data types, BSON enables MongoDB to handle diverse data structures and accommodate the needs of various applications. 
 
 
 ## Schema design principles and best practices && Embedded documents vs. referencing
 
-We will continue our dicsuccion of schema desing priciples and best bractices in combination with that of embeded documents vs referencing to get a solid undertanding of how we apply and take the various concepts into account. We stated that when considering the design of an effective schema, it is necessary to anticiplate scalability, data relationship and read/write patters. Let's elaborate a bit on these concept with some examples.
+ We're continuting on with our dicsuccion of schema design priciples and best practices in combination with that of embeded documents vs referencing to get a solid undertanding of how we apply the various concepts. We stated that when considering the design of an effective schema, it is necessary to anticiplate scalability, data relationship and read/write patters. Let's elaborate a bit on these concept with some examples.
 
 The scenario for our example will be the following: We are developing a social media platform where users can post and comment on each other's posts. Our application is expected to experience significant growth in both user activity and data volume. We need to design an effective MongoDB schema to handle scalability, data relationships, and read/write patterns efficiently.
 
@@ -292,10 +296,10 @@ Goal:
 ```javascript
 // User Collection:
 {
-  _id: ObjectId("user_id"),
-  name: "User Name",
-  username: "username",
-  email: "user@email.com",
+  "_id": "ObjectId("user_id")",
+  "name": "User Name",
+  "username": "IamAUser",
+   "email": "user@email.com"
   // Other user details
 }
 
@@ -340,7 +344,6 @@ Consider a scenario where we have a "user" document and a "profile" document, wh
 
 ```javascript
 {
-  "_id": "user1",
   "name": "John",
   "email": "john@example.com",
   "profile": {
@@ -359,7 +362,7 @@ Consider a scenario where we have a "category" document and multiple "product" d
 Embedding:
 ```javascript
 {
-  "_id": "category1",
+ 
   "name": "Electronics",
   "products": [
     { "name": "TV", "price": 1000 },
