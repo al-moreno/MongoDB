@@ -170,7 +170,6 @@ Here's an example of a document in the "Books" collection in MongoDB:
 
 ```javascript
 {
-  "_id": ObjectId("60eae773eae9f94db6a69cf4"),
   "title": "The Great Gatsby",
   "author": "F. Scott Fitzgerald",
   "isbn": "978-0-684-80146-3",

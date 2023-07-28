@@ -41,7 +41,7 @@ The find() method is commonly used for basic querying. By calling find() without
 
 On the other hand, the findOne() method is particularly useful when you need to retrieve a single document from a collection that matches a specific filter. It returns the first document that satisfies the query criteria, making it efficient for quickly accessing a specific record.
 
-By leveraging the find() and findOne() methods, along with query operators, MongoDB enables flexible and precise data retrieval, empowering developers to efficiently work with collections and obtain the desired results.
+By leveraging the find() and findOne() methods, along with query operators, MongoDB enables flexible and precise data retrieval, empowering us developers to efficiently work with collections and obtain the desired results.
 
 
 
@@ -53,11 +53,11 @@ Comparison operators play a crucial role in querying based on specific condition
 
 - Slide 6 -
 
-MongoDB offers powerful logical operators that facilitate combining multiple conditions in a single query. These logical operators, including `$and`, `$or`, and `$not`, expand the querying capabilities by allowing for complex conditions. To illustrate, suppose you wish to find documents where the "age" field is greater than 30 and the "gender" field is "male". In such cases, you can employ the `$and` operator within the `find()` method. The query would look like this: `db.collectionName.find({ $and: [{ age: { $gt: 30 } }, { gender: "male" }] })`. This query will fetch all the documents that satisfy both conditions simultaneously. MongoDB's logical operators empower users to construct sophisticated queries by combining multiple conditions to retrieve the desired documents.
+MongoDB offers powerful logical operators as well. These operators facilitate combining multiple conditions in a single query, and including `$and`, `$or`, and `$not`, which expand the querying capabilities by allowing for complex conditions. To illustrate, suppose you wish to find documents where the "age" field is greater than 30 and the "gender" field is "male". In such cases, you can employ the `$and` operator within the `find()` method. The query would look like this: `db.collectionName.find({ $and: [{ age: { $gt: 30 } }, { gender: "male" }] })`. This query will fetch all the documents that satisfy both conditions simultaneously. MongoDB's logical operators empower users to construct sophisticated queries by combining multiple conditions to retrieve the desired documents.
 
 - Slide 7 -
 
-Array operators offer valuable functionality for querying arrays within documents. These operators, such as `$in`, `$nin`, `$all`, `$elemMatch`, and others, enable precise querying and manipulation of array fields. For instance, suppose you want to find documents where the "tags" field contains either "mongodb" or "database". In this case, you can utilize the `$in` operator within the `find()` method. The query would be as follows: `db.collectionName.find({ tags: { $in: ["mongodb", "database"] } })`. This query will retrieve all the documents where the "tags" field includes either "mongodb" or "database". By employing array operators, MongoDB provides a versatile solution for querying and working with arrays in documents, allowing for efficient data retrieval and manipulation.
+Array operators offer valuable functionality for querying arrays within documents. These operators, such as `$in`, `$nin`, `$all`, `$elemMatch`, and others, enable precise querying and manipulation of array fields. Where the `$in` operator matches arrays that contain all elements specified, the `$nin` selects documents where the field does not match any value specified, the `$all` selects document where the field contains all the specified elements , and the `$elemMatch` matches documents with an array field which contains at least one element of the specified criteria. For instance, suppose you want to find documents where the "tags" field contains either "mongodb" or "database". In this case, you can utilize the `$in` operator within the `find()` method. The query would be as follows: `db.collectionName.find({ tags: { $in: ["mongodb", "database"] } })`. This query will retrieve all the documents where the "tags" field includes either "mongodb" or "database". By employing array operators, MongoDB provides a versatile solution for querying and working with arrays in documents, allowing for efficient data retrieval and manipulation.
 
 - Slide 8 - 
 
@@ -76,7 +76,7 @@ By incorporating the `sort()` and `limit()` methods into your queries, you gain 
 
 - Slide 10 
 
-We have available to us some powerful techniques for accessing and manipulating nested documents and arrays within MongoDB documents, offering flexibility and efficiency in working with complex data structures. Dot notation is used to access fields within nested documents, allowing you to navigate through the hierarchy by chaining field names. This enables you to access deeply nested fields, such as `documentName.address.location.coordinates`, which retrieves the "coordinates" field within the "location" field, nested within the "address" field.
+We have available to us some powerful techniques for accessing and manipulating nested documents and arrays within documents, offering flexibility and efficiency in working with complex data structures. Dot notation is used to access fields within nested documents, allowing you to navigate through the hierarchy by chaining field names. This enables you to access deeply nested fields, such as `documentName.address.location.coordinates`, which retrieves the "coordinates" field within the "location" field, nested within the "address" field.
 
 Manipulating nested documents involves using dot notation and operators like `$set` and `$unset`. By specifying the field path and the desired update, you can modify fields within nested documents. For example, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $set: { "address.city": "New City" } })` updates the "city" field within the "address" field of a specific document.
 
@@ -84,7 +84,7 @@ Accessing and manipulating arrays in MongoDB is straightforward using the array 
 
 The flexibility of MongoDB extends to combining nested documents and arrays within documents. This enables the representation of complex data structures, where you can access and manipulate nested documents within arrays and arrays within nested documents using the techniques mentioned above.
 
-By leveraging these techniques, you can effectively work with nested documents and arrays
+
 
 
 - Slide 11 - 
@@ -102,38 +102,78 @@ The $inc operator is particularly handy for numeric fields, as it enables you to
 
 - Slide 12 -
 
-When working with array fields, the $push operator comes in handy by allowing you to append elements to the existing array. For example, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $push: { arrayField: element } })` adds an "element" to the "arrayField" within a specific document.
+When working with array fields, the `$push` operator comes in handy by allowing you to append elements to the existing array. For example, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $push: { arrayField: element } })` adds an "element" to the "arrayField" within a specific document.
 
-Lastly, the $pull operator allows you to remove specific elements from an array field based on a specified condition. For example, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $pull: { arrayField: { condition } } })` removes elements from the "arrayField" that match the specified "condition" within a specific document.
+Lastly, the `$pull` operator allows you to remove specific elements from an array field based on a specified condition. For example, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $pull: { arrayField: { condition } } })` removes elements from the "arrayField" that match the specified "condition" within a specific document.
 
-By utilizing these update operators, you gain the flexibility to modify documents in MongoDB collections with precision. Whether you need to update specific fields, add or remove elements within arrays, or perform numeric operations, these operators provide a seamless and controlled way to modify your MongoDB data.
+So whether you need to update specific fields, add or remove elements within arrays, or perform numeric operations, these operators provide a seamless and controlled way to modify your MongoDB data.
 
 
 - Slide 13 -
 
-Removing documents from collections is achieved using the deleteOne() and deleteMany() methods. These methods offer a simple approach for removing documents based on specific criteria. The deleteOne() method removes a single document that matches the given filter, while the deleteMany() method removes multiple documents that meet the specified criteria. To use these methods, you provide a filter object as a parameter to identify the documents to be deleted. It is essential to carefully consider the accuracy of the filter criteria to avoid unintended data removal. Additionally, taking regular backups and considering data archiving can help ensure data safety and preservation. Proper management and cautious use of these deletion methods are crucial to maintain data integrity and avoid any unintended consequences.
+Removing documents from collections is achieved using the `deleteOne()` and `deleteMany()` methods. These methods offer a simple approach for removing documents based on specific criteria. The `deleteOne()` method removes a single document that matches the given filter, while the `deleteMany()` method removes multiple documents that meet the specified criteria. To use these methods, you provide a filter object as a parameter to identify the documents to be deleted. It is essential to carefully consider the accuracy of the filter criteria to avoid unintended data removal. Additionally, taking regular backups and considering data archiving can help ensure data safety and preservation. After all, proper management and cautious use of these deletion methods are crucial to maintain data integrity and avoid any unintended consequences.
 
 
 ## Creating new documents
 
-The process of inserting new documents into MongoDB collections involves utilizing the `insertOne()` and `insertMany()` methods, which offer flexibility depending on the number of documents to be inserted.
 
-To insert a single document, you can use the `insertOne()` method. This method takes a single document as an argument and adds it to the specified collection.For example:
+
+In this exercise, we will practice inserting new documents into our pre-excisting bookstore database. We've done this through Compass but we now want to practice on Shell. We will utilize the `insertOne()` and `insertMany()` methods to add books. The bookstore should have two main collections: "books" and "authors."
+
+1. Design the schema for the "books" and "authors" collections.
+- Each book should have fields for "title," "author," "genre," "pages," and "rating"
+- Each author should have fields for "name," "nationality," and "birthdate."
+
+2.We'll use the `insertOne()` method to add a single book and its corresponding author to the collections. For example:
 
 ```javascript
-db.collectionName.insertOne({ field1: value1, field2: value2, ... });
+db.authors.insertOne({ 
+name:"Jane Doe",
+nationality:"Mexico",
+birthdate:"1972-03-17" });
+
+
+
+db.books.insertOne({
+  title: "The Book Title",
+  author: "Jane Doe",
+  genres: [ "Mystery", "Sci-fi" ],
+  pages: 274,
+  rating: 10
+});
 ```
 
-On the other hand, when you need to insert multiple documents simultaneously, you can employ the `insertMany()` method. This method takes an array of documents as the parameter, and each document is inserted into the specified collection. For example:
+4. We will use the `insertMany()` method to add multiple books to the "books" collection. Ensure that each book is associated with the appropriate author using their ObjectId.
 
 ```javascript
-db.collectionName.insertMany([{ field1: value1, field2: value2 }, { field1: value3, field2: value4 }, ... ]);
+
+db.books.insertMany([
+  {
+    title: "Adventure Awaits",
+    author: "Jane Doe",
+    genres: ["Adventure", "Novel"  ],
+    pages: 827,
+    rating: 9
+  },
+  {
+    title: "Sci-Fi Chronicles",
+     author: "Jane Doe",
+    genres: ["Adventure","Science Fiction"  ],
+    pages: 827,
+    rating: 9
+  },
+
+]);
 ```
 
-Both `insertOne()` and `insertMany()` methods return information about the inserted documents, including the `_id` field, which is automatically generated by MongoDB to provide a unique identifier for each document.
+5. Verify that the documents have been successfully inserted into the "books" and "authors" collections. You can use the `find()` method to retrieve and display the newly inserted documents.
 
-By utilizing these methods, you can seamlessly insert new documents into MongoDB collections, ensuring efficient data storage and organization.
+```javascript
+db.books.find()
 
+
+db.authors.find()
+```
 
 
 
@@ -141,31 +181,27 @@ By utilizing these methods, you can seamlessly insert new documents into MongoDB
 
 ## Retrieving and finding documents
 
-Querying for documents in MongoDB using the find() method and query operators allows you to filter and search for specific data. The process involves:
 
-1. Basic Querying:
-   - To retrieve documents from a collection, use the `find()` method without any parameters. This will return all documents in the collection.
-   - For more specific queries, you can pass a filter object as an argument to the `find()` method. The filter object contains key-value pairs representing the fields and values to match against.
-   - For example, to find documents where the value of the "name" field is "John", you would use: `db.collectionName.find({ name: "John" })`.
+Next, we will be practicing querying for specific books 
 
-2. Comparison Operators:
-   - MongoDB provides various comparison operators that allow you to query based on specific conditions. Some commonly used comparison operators include `$eq` (equals), `$ne` (not equals), `$gt` (greater than), `$lt` (less than), `$gte` (greater than or equals), and `$lte` (less than or equals).
-   - For example, to find documents where the "age" field is greater than 30, you would use: `db.collectionName.find({ age: { $gt: 30 } })`.
 
-3. Logical Operators:
-   - MongoDB also supports logical operators, such as `$and`, `$or`, and `$not`, which allow you to combine multiple conditions in a query.
-   - For example, to find documents where the "age" field is greater than 30 and the "gender" field is "male", you would use: `db.collectionName.find({ $and: [{ age: { $gt: 30 } }, { gender: "male" }] })`.
+2. Querying arrays
 
-4. Array Operators:
-   - MongoDB provides array operators like `$in`, `$nin`, `$all`, `$elemMatch`, and more for querying arrays.
-   - For example, to find documents where the "tags" field contains either "mongodb" or "database", you would use: `db.collectionName.find({ tags: { $in: ["mongodb", "database"] } })`.
+```javascript
+db.books.find({ genres: "Sci-fi" });
+```
 
-5. Projections:
-   - By default, the `find()` method returns all fields of the matched documents. You can use the second parameter of the `find()` method to specify which fields to include or exclude in the result.
-   - For example, to include only the "name" and "age" fields in the result, you would use: `db.collectionName.find({}, { name: 1, age: 1 })`.
+3. Comparison Operators:
 
-By using these querying techniques and operators, you can effectively filter and search for specific data in MongoDB collections, retrieving the desired documents based on your criteria.
+```javascript
+db.books.find({ pages: { $gt: 350 } });
+```
 
+4. Logical Operators:
+
+```javascript
+db.books.find({ $or: [{ genres: "Novel" }, { genres: "Sci-fi" }] });
+```
 
 
 
@@ -173,48 +209,32 @@ By using these querying techniques and operators, you can effectively filter and
 
 ## Sorting and limiting data in query results
 
-To sort query results based on specific fields and limit the number of returned documents in MongoDB, you can use the `sort()` and `limit()` methods. Here's a step-by-step explanation:
+Next, we'll practice using the `sort()` and `limit()` methods 
+
 
 1. Sorting Results:
-   - After executing a query using the `find()` method, you can apply sorting by chaining the `sort()` method.
-   - The `sort()` method takes a sorting criteria object, where each field represents a key and its value determines the sorting order (`1` for ascending order and `-1` for descending order).
-   - For example, to sort documents in ascending order based on the "age" field, you would use: `db.collectionName.find().sort({ age: 1 })`.
+
+```javascript
+db.books.find().sort({ title: 1 });
+
+
+
+db.books.find().sort({ title: -1 });
+```
 
 2. Limiting Results:
-   - You can limit the number of returned documents by using the `limit()` method. Simply chain it after the `find()` method.
-   - The `limit()` method takes a numeric value that specifies the maximum number of documents to be returned.
-   - For example, to retrieve only the first five documents, you would use: `db.collectionName.find().limit(5)`.
+
+```javascript
+db.books.find().limit(3);
+```
 
 3. Combining Sorting and Limiting:
-   - You can combine sorting and limiting operations to retrieve a specific number of documents in a sorted order.
-   - For example, to retrieve the five oldest documents based on the "age" field, you would use: `db.collectionName.find().sort({ age: -1 }).limit(5)`.
 
-By utilizing the `sort()` and `limit()` methods, you can effectively control the order and number of documents returned in your MongoDB queries. Sorting ensures the desired order of results based on specific fields, while limiting allows you to focus on a specific subset of documents for more efficient data retrieval.
-
-
+```javascript
+db.books.find().sort({ rating: -1 }).limit(3);
+```
 
 
-## Working with nested documents and arrays
-
-MongoDB provides powerful techniques for accessing and manipulating nested documents and arrays within MongoDB documents, offering flexibility and efficiency in working with complex data structures. Next, we'll look at some techniques to showcase their capabilities.
-
-1. Accessing Nested Documents:
-   - To access fields within nested documents, you can use dot notation. For example, to access the "address.city" field within a document, you would use: `documentName.address.city`.
-   - Dot notation can be chained to access fields within deeply nested documents. For instance, `documentName.address.location.coordinates` accesses the "coordinates" field within the "location" field, which is nested within the "address" field.
-
-2. Manipulating Nested Documents:
-   - You can update fields within nested documents using dot notation and the `$set` operator. For example, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $set: { "address.city": "New City" } })` updates the "city" field within the "address" field of a specific document.
-   - Similarly, you can delete fields within nested documents using dot notation and the `$unset` operator. For instance, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $unset: { "address.city": "" } })` removes the "city" field within the "address" field of a specific document.
-
-3. Accessing and Manipulating Arrays:
-   - To access elements within an array, you can use the array index. For example, `documentName.arrayName[index]` retrieves the element at the specified index.
-   - MongoDB provides various array operators like `$push`, `$pop`, `$addToSet`, `$pull`, and more for manipulating array elements. These operators allow you to add, remove, or modify elements within an array efficiently.
-
-4. Combining Nested Documents and Arrays:
-   - MongoDB allows you to have nested documents within arrays and vice versa, enabling the representation of complex data structures.
-   - You can access and manipulate nested documents within arrays and arrays within nested documents using the techniques mentioned above.
-
-By leveraging these techniques, you can effectively access and manipulate nested documents and arrays within MongoDB documents. This flexibility empowers you to work with diverse and intricate data structures, making MongoDB a powerful tool for managing complex data.
 
 
 ## Updating documents using UPDATE operators
@@ -223,50 +243,44 @@ MongoDB provides powerful update operators that allow you to modify existing doc
 
 1. $set:
    - The $set operator updates specific fields within a document or adds new fields if they don't already exist.
-   - For example, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $set: { field1: value1, field2: value2 } })` updates the "field1" and "field2" fields within a specific document.
+   - For example, `db.books.updateOne({ _id: ObjectId("64c1316cb73d272e4e403483") }, { $set: { price: 12, isbn: 263846151 } })` updates the "field1" and "field2" fields within a specific document.
 
 2. $unset:
    - The $unset operator removes specified fields from a document.
-   - For example, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $unset: { field1: "" } })` removes the "field1" field from a specific document.
+   - For example, `db.books.updateOne({ _id: ObjectId("64c1316cb73d272e4e403483") }, { $unset: { price: 12, isbn: 263846151 } })` removes the "field1" field from a specific document.
 
 3. $inc:
    - The $inc operator increments or decrements the value of a numeric field by a specified amount.
-   - For example, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $inc: { field1: 1 } })` increments the value of the "field1" field by 1 in a specific document.
+   - For example, `db.books.updateOne({ _id: ObjectId("64c1316cb73d272e4e403483") }, { $inc: { price: 5 } })` increments the value of the "field1" field by 1 in a specific document.
 
 4. $push:
    - The $push operator appends elements to an array field within a document.
-   - For example, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $push: { arrayField: element } })` adds an "element" to the "arrayField" within a specific document.
+   - For example, `db.books.updateOne({ _id: ObjectId("64c1316cb73d272e4e403483") }, { $push: { genres: "History" } })` adds an "element" to the "arrayField" within a specific document.
 
 5. $pull:
    - The $pull operator removes elements from an array field that match a specified condition.
-   - For example, `db.collectionName.updateOne({ _id: ObjectId("documentId") }, { $pull: { arrayField: { condition } } })` removes elements from the "arrayField" that match the specified "condition" within a specific document.
-
-These update operators provide flexibility and precision in modifying documents within MongoDB collections. By leveraging these operators, you can efficiently update specific fields, add or remove elements within arrays, and perform numeric operations on existing data. This allows for seamless and controlled modifications to your MongoDB data.
+   - For example, `db.books.updateOne({ _id: ObjectId("64c1316cb73d272e4e403483") }, { $pull:  { genres: "History" } })` removes elements from the "arrayField" that match the specified "condition" within a specific document.
 
 
 ## Deleting documents from a collection
 
-In MongoDB, you can remove documents from collections using the `deleteOne()` and `deleteMany()` methods. These methods provide a straightforward way to remove documents based on specific criteria. Here's an explanation of the process:
+The last thing we will practice is the use of `deleteOne()` and `deleteMany()` methods to remove documents.
+Remember to practice caution when deleteing. 
 
-1. deleteOne():
-   - The `deleteOne()` method removes a single document that matches the specified filter criteria.
-   - To use `deleteOne()`, you pass a filter object as a parameter to identify the document(s) to be deleted.
-   - For example, `db.collectionName.deleteOne({ field1: value })` deletes a single document from the collection where "field1" matches the specified "value".
 
-2. deleteMany():
-   - The `deleteMany()` method removes multiple documents that match the specified filter criteria.
-   - Similar to `deleteOne()`, you provide a filter object to identify the documents to be deleted.
-   - For example, `db.collectionName.deleteMany({ field1: value })` removes all documents from the collection where "field1" matches the specified "value".
+1. Using deleteOne():
+   - Remove a book document with the title "The Catcher in the Rye" from the collection.
 
-Data management is crucial when removing documents from MongoDB collections. Here are some key considerations:
+```javascript
+db.books.deleteOne({ title: "The Catcher in the Rye" });
+```
 
-- Ensure the accuracy of the filter criteria to delete the intended documents and avoid accidentally removing unrelated data.
-- Take caution when using the `deleteMany()` method, as it can remove multiple documents at once.
-- Regularly backup your data to safeguard against unintentional data loss.
-- Consider archiving or preserving deleted data if it's required for audit or historical purposes.
-- Be aware of the cascading effects of document removal, particularly when dealing with related data and dependencies.
+2. Using deleteMany():
+   - Remove all books published by "Penguin Books" from the collection.
 
-By following proper data management practices and utilizing the `deleteOne()` and `deleteMany()` methods judiciously, you can effectively remove documents from MongoDB collections while maintaining the integrity and accuracy of your data.
+```javascript
+db.books.deleteMany({ author: "John Doe" });
+```
 
 ## Assessment
 
